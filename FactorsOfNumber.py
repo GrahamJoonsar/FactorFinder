@@ -3,11 +3,11 @@
 
 def findFactors(num):
     oldNum = num  # This is used to tell if the num is negative
-    num = abs(num)  # This makes sure that the number is positive
+    num = abs(num)  # This makes sure that the num is positive for finding factors
     factors = [[1, num]]  # One and the number will always be factors
-    factorsAlready = []  # this helps make sure there are no duplicate factor pairs
+    factorsAlready = []  # This helps make sure there are no duplicate factor pairs
     if num % 2 == 0:
-        for i in range(2, int(num / 2)):  # Only half he numbers need to be checked
+        for i in range(2, int(num / 2)):  # Only half the numbers need to be checked
             if num % i == 0:
                 if i not in factorsAlready:
                     factorsAlready.append(num / i)
