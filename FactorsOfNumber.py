@@ -10,13 +10,13 @@ def findFactors(num):
     num = abs(num)  # This makes sure that the number is positive
     factors = [(1, num)]  # One and the number will always be factors
     factors_already = []  # this helps make sure there are no duplicate factor pairs
-    if num % 2 == 0:
+    if num % 2 == 0: # Checks if the number is even
         for i in range(2, int(num / 2)):  # Only half the numbers need to be checked
             if num % i == 0:
                 if i not in factors_already:
                     factors_already.append(num / i)
                     factors.append((i, num / i))
-    elif num % 2 != 0:
+    elif num % 2 == 1: # checks if it is odd
         for j in range(3, int(num / 2 - 0.5), 2):  # Skips all even numbers; Odd numbers cant be divided by even numbers
             if num % j == 0:
                 if j not in factors_already:
@@ -28,6 +28,6 @@ def findFactors(num):
     print(factors)
 
 
-findFactors(3603600)
+findFactors(3603600) # Highly composite number
 
 print("\nTime taken for execution was " + str(time.time() - start_time))
